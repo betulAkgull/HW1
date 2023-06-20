@@ -1,2 +1,2 @@
 # HW1
-Guess random number
+this is a number guessing game written in Kotlin
