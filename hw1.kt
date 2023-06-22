@@ -1,3 +1,6 @@
+import java.util.Scanner
+import kotlin.system.exitProcess
+
 fun main() {
     guessGame()
 }
@@ -5,21 +8,21 @@ fun main() {
 fun guessGame() {
     val rnd = (0..101).random()
     val input = Scanner(System.`in`)
+    
     println("Welcome to the Guessing Game!")
-    println("I have chosen a number between 1 and 101. Can you guess it?")
+    println("I have chosen a number between 0 and 101. Can you guess it in 3 attempts ?")
 
     for (attempts in 1..3) {
         print("Attempt $attempts: Enter your guess: ")
         val guess = input.nextInt()
-
         if (guess == rnd) {
             println("Congratulations! You guessed the number in $attempts attempts.")
-            return
+            exitProcess(0)
         } else if (guess != null) {
             if (guess < rnd) {
-                println("Too low!")
+                println("Make it bigger")
             } else {
-                println("Too high!")
+                println("Make it smaller")
             }
         }
     }
